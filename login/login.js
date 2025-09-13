@@ -32,6 +32,8 @@ let language
 let forms_middle_1 = document.querySelector(".forms_middle_1");
 let forms_middle_2 = document.querySelector(".forms_middle_2");
 let headings = document.querySelector(".forms_head h3")
+let submit = document.querySelector(".submit-button")
+
 // Hide forms_middle_2 initially
 gsap.set(forms_middle_2, { autoAlpha: 0 });
 
@@ -66,5 +68,24 @@ capsules.forEach(capsule => {
         step.textContent = "Step 2/2"
         headings.textContent = "Tell Us About Yourself"
         language = (e.currentTarget.className).slice(8)
+
+        submit.style.display = "flex"
     });
 });
+
+
+async function translateText(text) {
+  const sourceLang = 'en';
+  const targetLang = 'ml'; // Use 'ml' for Malayalam
+  const url = `https://lingva.ml/api/v1/${sourceLang}/${targetLang}/${encodeURIComponent(text)}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.translation);
+  } catch (error) {
+    console.error('Error translating text:', error);
+  }
+}
+
+translateText('Hello, world!');

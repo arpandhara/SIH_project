@@ -25,7 +25,7 @@
 
     .forms {
         /* Adjusted height and width for better fit on mobile */
-        height: 55%;
+        height: 40%;
         width: 90%;
         padding: 6vw;
     }
@@ -76,14 +76,14 @@
         padding: 0 0.3rem;
     }
 
-    .forms_middle_2 .form-title {
-        font-size: 1.1rem;
+    .forms_middle_2 input[type="text"]{
+        margin-top: 7vw;
     }
 
     .forms_middle_2 input[type="text"],
     .forms_middle_2 select {
         font-size: 0.95rem;
-        padding: 10px 10px;
+        /* padding: 10px 10px; */
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
@@ -91,11 +91,11 @@
 
     .forms_middle_2 .submit-button {
         font-size: 1rem;
-        padding: 20px 10px;
+        padding: 10px 10px;
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
-        margin-top: 0.2rem;
+        /* margin-top: 0.2rem; */
     }
 
     .forms_middle_2 select {
@@ -111,23 +111,27 @@
 /* === Smallest Mobile Screens (up to 320px) === */
 @media (max-width: 320px) {
     .forms {
-        height: 60%;
+        height: 30%;
         /* Increased height for very small devices */
-    }
-
-    .forms_middle_2 .form-title {
-        font-size: 1rem;
-        /* Further reduced title size */
     }
 
     .capsule {
         height: auto;
         width: fit-content;
         background-color: #282A2F;
-        padding: 1vw;
+        padding: 2vw;
         border-radius: 25px;
         transition: ease-in-out;
         cursor: pointer;
+    }
+    
+    .capsule p{
+        font-size: 4vw;
+    }
+
+    .submit-button{
+        font-size: 5vw;
+        padding: 10px 20px;
     }
 }
 
@@ -136,8 +140,8 @@
 @media (max-width: 768px) and (min-width: 427px) {
     .forms {
         /* Adjusted size for tablets */
-        height: 50%;
-        width: 60%;
+        height: 30%;
+        width: 50%;
     }
 
     .forms h3 {

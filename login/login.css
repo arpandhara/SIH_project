@@ -303,8 +303,8 @@ button {
 }
 
 /* Styling for the new button */
-.forms_middle_2 .submit-button {
-    /* margin-top: 1rem; */
+.submit-button {
+    margin-top: 1rem;
     padding: 12px 30px;
     border: none;
     border-radius: 25px;
@@ -314,6 +314,7 @@ button {
     font-weight: 500;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;
+    display: none;
 }
 
 .forms_middle_2 .submit-button:hover {
