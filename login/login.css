@@ -29,7 +29,7 @@ main {
 }
 
 .welcome {
-    display: none;
+    /* display: none; */
     line-height: 1;
     color: white;
     font-weight: 700;
@@ -39,7 +39,7 @@ main {
 }
 
 .welcome-tag-line {
-    display: none;
+    /* display: none; */
     font-size: 2vw;
     text-align: center;
     font-style: italic;
@@ -50,7 +50,7 @@ button {
 }
 
 .button.button-item{
-    display:  none;
+    /* display:  none; */
 }
 
 .button {
@@ -186,19 +186,17 @@ button {
 }
 
 
-
 .forms{
     background-color: #C5E5C9;
     height: 40%;
     width: 30%;
     border-radius: 1vw;
-    /* border: #9747FF; */
-    /* border-style: dashed; */
     padding: .8vw;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    overflow: hidden;
+    overflow: hidden; /* This will contain the animations */
+    display: none;
 }
 
 .forms_head{
@@ -209,16 +207,36 @@ button {
     align-items: center; 
 }
 
+.forms_middle_wrapper {
+    position: relative;
+    flex: 1; /* This makes the wrapper fill the remaining space */
+    width: 100%;
+}
+
+/* Common styles for both form sections */
+.forms_middle_1,
+.forms_middle_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Specific styles for the language capsules container */
+.forms_middle_1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    justify-content: center; /* Better alignment for the capsules */
+    padding-top: 10%;      /* Replaces the old 'margin-top' for spacing */
+}
+
+/* Specific styles for the second form section */
+
 .forms h3{
     font-weight: 600;
 }
 
-.forms_middle_1{
-    margin-top: 10%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1vw;
-}
 
 .capsule{
     height: auto;
@@ -234,9 +252,69 @@ button {
     color: white;
 }
 
-.forms_middle_2{
+.forms_middle_2 {
+    height: 100%; /* This one correctly fills the space */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1.2rem; /* Add space between form elements */
+    padding: 0 2rem; /* Add horizontal padding */
+}
+
+.forms_middle_2 .form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #282A2F;
+    margin-bottom: 1rem;
+}
+
+/* Common styles for input and select */
+.forms_middle_2 input[type="text"],
+.forms_middle_2 select {
     width: 100%;
-    height: 100%;
-    /* background-color: black; */
-    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid rgba(40, 42, 47, 0.2);
+    border-radius: 25px; /* Matches capsule border-radius */
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    color: #282A2F;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forms_middle_2 input[type="text"]::placeholder {
+    color: rgba(40, 42, 47, 0.5);
+}
+
+.forms_middle_2 select {
+    appearance: none; /* Remove default dropdown arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23282A2F' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+
+/* Style for when the user clicks on an element */
+.forms_middle_2 input[type="text"]:focus,
+.forms_middle_2 select:focus {
+    border-color: #282A2F;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Styling for the new button */
+.forms_middle_2 .submit-button {
+    margin-top: 1rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #282A2F;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.forms_middle_2 .submit-button:hover {
+    transform: scale(1.05);
 }

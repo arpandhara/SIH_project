@@ -29,29 +29,42 @@ register_btn.addEventListener("click", function () {
 let capsules = document.querySelectorAll(".capsule")
 let step = document.querySelector(".forms_head h5")
 let language
-let forms_middle_2 = document.querySelector(".forms_middle_2")
+let forms_middle_1 = document.querySelector(".forms_middle_1");
+let forms_middle_2 = document.querySelector(".forms_middle_2");
+let headings = document.querySelector(".forms_head h3")
 // Hide forms_middle_2 initially
-forms_middle_2.style.display = "none"
+gsap.set(forms_middle_2, { autoAlpha: 0 });
 
 capsules.forEach(capsule => {
     capsule.addEventListener("click", function (e) {
-        gsap.to(".forms_middle_1", {
+
+        const tl = gsap.timeline();
+
+        // Animate out forms_middle_1
+        tl.to(forms_middle_1, {
             x: -450,
+            autoAlpha: 0,
             duration: 1,
-            ease: "power3"
+            ease: "power3.inOut"
         });
 
-
-        // Show forms_middle_2 and animate it in from right
-        forms_middle_2.style.display = "flex"
-        gsap.fromTo(
-            ".forms_middle_2",
-            { x: 450 },
-            { x: 0, duration: 1, ease: "power3" }
+        // Animate in forms_middle_2, starting at the same time
+        tl.fromTo(forms_middle_2,
+            { x: 450, autoAlpha: 0 },
+            { x: 0, autoAlpha: 1, duration: 1, ease: "power3.inOut" },
+            "<" // <-- This synchronizes the start of both animations
         );
 
+        tl.from(".forms_middle_2 > *", {
+            y: 30,
+            opacity: 0,
+            stagger: 0.2, // Each element animates 0.2s after the previous one
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.5")
+        
         step.textContent = "Step 2/2"
-
+        headings.textContent = ""
         language = (e.currentTarget.className).slice(8)
     });
 });

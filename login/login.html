@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF--8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishi AI</title>
     <link rel="stylesheet" href="login.css">
@@ -15,7 +15,6 @@
         <h1 class="welcome">Welcome to Krishi AI</h1>
         <p class="welcome-tag-line">Your Personal Ai Advisory</p>
 
-        <!-- this is for button -->
         <button class="button button-item">
             <span class="button-bg">
                 <span class="button-bg-layers">
@@ -31,13 +30,12 @@
         </button>
 
 
-        <!-- forms -->
-
         <div class="forms">
             <div class="forms_head">
                 <h3>Choose Your Language</h3>
                 <h5>Step 1/2</h5>
             </div>
+            <div class="forms_middle_wrapper">
                 <div class="forms_middle_1">
                     <div class="capsule ben">
                         <p>বাঙ্গালী</p>
@@ -73,7 +71,19 @@
                         <p>English</p>
                     </div>
                 </div>
-                <div class="forms_middle_2">hello</div>
+                <div class="forms_middle_2">
+                    <p class="form-title">Tell Us About Yourself</p>
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                    <select id="fruits" name="fruits" required>
+                        <option value="" disabled selected>Select your favorite fruit</option>
+                        <option value="apple">Apple</option>
+                        <option value="banana">Banana</option>
+                        <option value="orange">Orange</option>
+                        <option value="mango">Mango</option>
+                    </select>
+                    <button class="submit-button">Continue</button>
+                </div>
+            </div>
         </div>
 
 
