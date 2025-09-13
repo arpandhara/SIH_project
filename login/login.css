@@ -258,21 +258,22 @@ button {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    gap: 1.2rem; /* Add space between form elements */
-    padding: 0 2rem; /* Add horizontal padding */
+    gap: 0.7rem; /* Reduced space between form elements */
+    padding: 0 1rem; /* Add horizontal padding */
 }
 
 .forms_middle_2 .form-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: #282A2F;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 /* Common styles for input and select */
 .forms_middle_2 input[type="text"],
 .forms_middle_2 select {
     width: 100%;
+    /* margin-top: 1rem; */
     padding: 12px 20px;
     border: 2px solid rgba(40, 42, 47, 0.2);
     border-radius: 25px; /* Matches capsule border-radius */
@@ -303,7 +304,7 @@ button {
 
 /* Styling for the new button */
 .forms_middle_2 .submit-button {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     padding: 12px 30px;
     border: none;
     border-radius: 25px;

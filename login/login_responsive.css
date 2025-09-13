@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&family=Italiana&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway+Dots&display=swap');
 
 
+/* === Mobile Screens (up to 426px) === */
 @media (max-width: 426px) {
 
     .welcome {
-        /* color: white; */
-        /* text-shadow: 2px 2px 5px rgba(0,0,0,0.5); */
         font-weight: 700;
         text-align: center;
         font-size: 9vw;
-        /* padding-bottom: 60vw; */
     }
 
     .welcome-tag-line {
@@ -26,10 +24,10 @@
     }
 
     .forms {
-        height: 38%;
-        width: 80%;
-        padding: 4vw;
-        border: 1px solid black;
+        /* Adjusted height and width for better fit on mobile */
+        height: 55%;
+        width: 90%;
+        padding: 6vw;
     }
 
     .forms_head {
@@ -45,28 +43,25 @@
         font-weight: 600;
     }
 
-    .forms_head h5{
+    .forms_head h5 {
         font-size: 2.5vw;
     }
 
     .forms_middle_1 {
-        /* margin-top: 7%; */
         display: flex;
         flex-wrap: wrap;
         gap: 2vw;
-        /* padding: 2vw; */
     }
 
     .capsule {
         height: auto;
         width: fit-content;
-        background-color: #282A2F;
         padding: 2vw;
         border-radius: 25px;
         transition: ease-in-out;
     }
 
-    .capsule p{
+    .capsule p {
         font-size: 3.5vw;
     }
 
@@ -74,25 +69,75 @@
         scale: .95;
     }
 
-    .capsule p {
-        color: white;
+    /* ▼▼▼ NEW RESPONSIVE STYLES ADDED HERE ▼▼▼ */
+
+    .forms_middle_2 {
+        gap: 0.5rem;
+        padding: 0 0.3rem;
     }
+
+    .forms_middle_2 .form-title {
+        font-size: 1.1rem;
+    }
+
+    .forms_middle_2 input[type="text"],
+    .forms_middle_2 select {
+        font-size: 0.95rem;
+        padding: 10px 10px;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .forms_middle_2 .submit-button {
+        font-size: 1rem;
+        padding: 20px 10px;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin-top: 0.2rem;
+    }
+
+    .forms_middle_2 select {
+        background-position: right 10px center;
+    }
+
+    /* ▲▲▲ END OF NEW STYLES ▲▲▲ */
+
+
 }
 
 
-
+/* === Smallest Mobile Screens (up to 320px) === */
 @media (max-width: 320px) {
-    .forms{
-        height: 28%;
+    .forms {
+        height: 60%;
+        /* Increased height for very small devices */
+    }
+
+    .forms_middle_2 .form-title {
+        font-size: 1rem;
+        /* Further reduced title size */
+    }
+
+    .capsule {
+        height: auto;
+        width: fit-content;
+        background-color: #282A2F;
+        padding: 1vw;
+        border-radius: 25px;
+        transition: ease-in-out;
+        cursor: pointer;
     }
 }
 
 
-
-@media (max-width: 768px ) and (min-width: 426px) {
-    .forms{
-        height: 35%;
-        width: 40%;
+/* === Tablet Screens (427px to 768px) === */
+@media (max-width: 768px) and (min-width: 427px) {
+    .forms {
+        /* Adjusted size for tablets */
+        height: 50%;
+        width: 60%;
     }
 
     .forms h3 {
@@ -100,7 +145,15 @@
         font-weight: 600;
     }
 
-    .forms_head h5{
+    .forms_head h5 {
         font-size: 1.2vw;
     }
+
+    /* ▼▼▼ NEW RESPONSIVE STYLES ADDED HERE ▼▼▼ */
+    .forms_middle_2 .form-title {
+        font-size: 1.3rem;
+        /* Slightly smaller title for tablets */
+    }
+
+    /* ▲▲▲ END OF NEW STYLES ▲▲▲ */
 }

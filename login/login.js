@@ -62,9 +62,9 @@ capsules.forEach(capsule => {
             duration: 0.8,
             ease: "power2.out"
         }, "-=0.5")
-        
+
         step.textContent = "Step 2/2"
-        headings.textContent = ""
+        headings.textContent = "Tell Us About Yourself"
         language = (e.currentTarget.className).slice(8)
     });
 });
